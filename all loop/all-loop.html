@@ -1,0 +1,46 @@
+<script>
+//while//
+    while (i <= 10) {
+
+        console.log(i)
+
+        i++
+    }
+//do while//
+    do {
+        console.log(i);
+        i++
+    } while (i <= 10);
+//for//
+    for (let i = 0; i <= 10; i++) {
+        console.log(i)
+    }
+
+    let arr = [
+        {
+            name: 'abc',
+            class: 8
+        },
+        {
+            name: 'xyz',
+            class: 9
+        },
+    ];
+//forEach//
+    arr.forEach((val, index) => {
+        console.log(val)
+    })
+
+    let result = arr.map((val) => {
+        return val;
+    });
+
+    console.log(result)
+//for of//
+    for (let val of arr) {
+        console.log(val)
+    }
+//for in//
+    for (let key in arr) {
+        console.log(arr[key])
+    }

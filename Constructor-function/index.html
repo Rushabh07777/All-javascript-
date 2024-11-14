@@ -1,0 +1,36 @@
+<script>
+    const obj = [
+        {
+             name : 'Abc',
+             age : 15,
+             class : 8
+        },
+     {
+         name : 'xyz',
+            age : 16,
+            class : 9
+        },
+        {
+            name : 'pqr',
+            age : 17,
+            class : 10
+        },
+     ]
+
+    function Students(name,age,std){
+        this.name = name
+        this.age = age
+        this.std = std
+    }
+
+    let arr = [
+    new Students("Ram",16,10),
+    new Students("Shyam",17,11)
+    ];
+
+    arr.forEach((val)=>{
+        console.log(val.name)
+    })
+
+
+</script>
