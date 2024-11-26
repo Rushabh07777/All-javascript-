@@ -1,0 +1,23 @@
+<script>
+    //what is a call Back Function ?
+    //=> when you pass a function into arugument of another function
+    // is called callback
+
+    // Syntax
+
+    function greeting(name, callback) {
+        console.log(`Hello ${name} `);
+
+        return callback(10, 10);
+    }
+
+
+    function add(x, y) {
+        return x + y;
+    }
+
+    let res = greeting('Gupta', add);
+
+    console.log(res);
+
+</script>
