@@ -1,0 +1,27 @@
+<script>
+
+    const myPromise = new Promise((resolve,reject)=>{
+
+            let success = false;
+
+            if(success){
+
+                setTimeout(()=>{
+                    resolve('Submit');
+                },1500)
+
+            }else{
+                reject('Submit nahi hoga');
+            }
+
+    });
+
+    // Promise Handle
+
+    myPromise
+    .then(result=>console.log(result))
+    .catch(error=>console.log(error))
+    .finally(()=>console.log('Notes :'));
+    
+   
+</script>

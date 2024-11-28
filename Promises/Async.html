@@ -1,0 +1,31 @@
+<script>
+    //  async await
+console.log("Start The Code")
+    const myPromise = new Promise((resolve,reject)=>{
+
+        let success = true;
+
+        if(success){
+
+            setTimeout(()=>{
+                resolve('Submit Succesfully!');
+            },2000)
+
+        }else{
+            reject('Submit nahi hoga!');
+        }
+
+});
+
+    async function Handle(){
+        try{
+            const res = await myPromise;
+            console.log(res);
+        }catch(error){
+            console.log(error);
+        }finally{
+            console.log("This Code The End");
+        }
+    }
+    Handle();
+</script>
