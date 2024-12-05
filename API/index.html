@@ -1,0 +1,9 @@
+<script>
+
+    fetch('data.json')
+    .then((res)=>res.json()) // pending Promise
+    .then((data)=>console.log(data))
+    .catch((err)=>console.log(err))
+    .finally(()=>
+    console.log('Finally response '));
+</script>

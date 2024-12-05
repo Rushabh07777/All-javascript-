@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        padding: 5px 10px;
+        color: white;
+        background-color: black;
+    }
+</style>
+<body>
+    <img id="image" src="https://www.shutterstock.com/image-photo/happy-puppy-welsh-corgi-14-600nw-2270841247.jpg" style="width: 30%;">
+
+
+<a href=""><button onclick='return getDog()'> Next Dog</button></a>
+
+    <script>
+        const getDog = async () => {
+
+            try {
+                let res = await fetch('https://dog.ceo/api/breeds/image/random')
+
+            let final = await res.json();
+
+                let img = document.getElementById('image');
+
+                img.src = final.message
+            } catch (err) {
+                console.log(err)
+            }
+
+        }
+    </script>
+</body>
+
+</html>

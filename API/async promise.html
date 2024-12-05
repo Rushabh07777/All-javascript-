@@ -1,0 +1,30 @@
+<script>
+
+    // External JSON file handling
+    // Fetch API
+    // You have Three methods to call API 1 : AJAX 2 : Fetch 3 : Axios
+
+     fetch('https://jsonplaceholder.typicode.com/todos/') // it returns a promise
+    .then((res) => res.json()) // it return a promise .json() parse
+    .then((data) => console.log(data)) // it print data resolve
+    .catch((err) => console.log(err))
+
+
+    async function myData() {
+
+        try {
+            const res = await fetch('https://jsonplaceholder.typicode.com/todos/');
+
+            let finalResult = await res.json();
+
+            console.log(finalResult);
+        } catch (err) {
+
+        }
+
+    }
+
+    myData()
+
+
+</script>
