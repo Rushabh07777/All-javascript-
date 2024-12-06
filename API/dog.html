@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    button{
-        padding: 5px 10px;
-        color: white;
-        background-color: black;
-    }
-</style>
 <body>
-    <img id="image" src="https://www.shutterstock.com/image-photo/happy-puppy-welsh-corgi-14-600nw-2270841247.jpg" style="width: 30%;">
+    <img src="" width="45%" id="image">
 
+<div id="main">
+    <select id="breedselect">
+        <option value="chow">Chow</option>
+        <option value="Akita">Akita</option>
+        <option value="african">African</option>
+        <option value="boxer">Boxer</option>
+        <option value="borzoi">Borzoi</option>
+        <option value="kelpie">kelpie</option>
+        <option value="husky">Husky</option>
+    </select>
+</div>
 
-<a href=""><button onclick='return getDog()'> Next Dog</button></a>
+<button onclick="getDog()">New Dog</button>
 
-    <script>
-        const getDog = async () => {
-
-            try {
-                let res = await fetch('https://dog.ceo/api/breeds/image/random')
-
+<script>
+   let breedSelect = document.getElementById('breedselect');
+    
+    let getDog = async () => {
+       let breed = breedSelect.value;  // Get dropdown
+        console.log(breed);
+        try {
+            let res = await fetch(`https:dog.ceo/api/breed/${breed}/images/random`);
             let final = await res.json();
-
-                let img = document.getElementById('image');
-
-                img.src = final.message
-            } catch (err) {
-                console.log(err)
-            }
-
+            let img = document.getElementById('image');
+            img.src = final.message;
+        } catch (err) {
+            console.log(err);
         }
-    </script>
+    }
+</script>
 </body>
-
 </html>
